@@ -23,7 +23,7 @@ export const HeroImage: React.FC<HeroImageProps> = ({ season }) => {
         Fall: show lower section on mobile (80%)
       */}
       <img
-        src={season === 'spring' ? `${import.meta.env.BASE_URL}bg.png` : `${import.meta.env.BASE_URL}bg_2.png`}
+        src={season === 'spring' ? `${import.meta.env.BASE_URL}bg.jpg` : `${import.meta.env.BASE_URL}bg_2.jpg`}
         alt="Arctic dogsled adventure"
         className={`absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-100 transition-opacity duration-700 ease-in-out ${season === 'spring' ? 'spring-bg-position' : ''}`}
         style={{
