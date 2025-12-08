@@ -44,7 +44,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, setLang }) => {
           className="hover:opacity-70 transition-opacity flex-shrink-0"
         >
           <img
-            src="/sikumut-logo-navbar-horizontal-tagline.png"
+            src={`${import.meta.env.BASE_URL}sikumut-logo-navbar-horizontal-tagline.png`}
             alt="Sikumut"
             className="h-8 md:h-11 w-auto max-w-[140px] md:max-w-none object-contain"
           />
