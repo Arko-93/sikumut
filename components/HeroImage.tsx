@@ -15,21 +15,29 @@ export const HeroImage: React.FC<HeroImageProps> = ({ season }) => {
         contain: 'strict'
       }}
     >
-      {/* 
-        Primary Visual: Halftone Image
-        Using explicit path to public folder as requested.
-        GPU-accelerated for smooth mobile scrolling.
-        Spring: show upper-mid section on mobile (20%)
-        Fall: show lower section on mobile (80%)
-      */}
+      {/* Spring Image (Winter/Ice) */}
       <img
-        src={season === 'spring' ? `${import.meta.env.BASE_URL}bg.jpg` : `${import.meta.env.BASE_URL}bg_2.jpg`}
+        src={`${import.meta.env.BASE_URL}bg.jpg`}
         alt="Arctic dogsled adventure"
-        className={`absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-100 transition-opacity duration-700 ease-in-out ${season === 'spring' ? 'spring-bg-position' : ''}`}
+        className={`absolute inset-0 w-full h-full object-cover mix-blend-multiply transition-opacity duration-1000 ease-in-out spring-bg-position ${season === 'spring' ? 'opacity-100 z-10' : 'opacity-0 z-0'
+          }`}
         style={{
           transform: 'translateZ(0)',
           backfaceVisibility: 'hidden',
-          objectPosition: season === 'spring' ? 'center 0%' : 'center 80%'
+          objectPosition: 'center 0%' /* Inline fallback for spring position */
+        }}
+      />
+
+      {/* Fall Image (Sea/Boat) */}
+      <img
+        src={`${import.meta.env.BASE_URL}bg_2.jpg`}
+        alt="Greenlandic hunter in boat"
+        className={`absolute inset-0 w-full h-full object-cover mix-blend-multiply transition-opacity duration-1000 ease-in-out ${season === 'fall' ? 'opacity-100 z-10' : 'opacity-0 z-0'
+          }`}
+        style={{
+          transform: 'translateZ(0)',
+          backfaceVisibility: 'hidden',
+          objectPosition: 'center 80%'
         }}
       />
 
