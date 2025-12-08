@@ -109,9 +109,12 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="relative min-h-screen w-full overflow-x-hidden text-[#1a1a1a]">
-      {/* Noise Texture Overlay */}
-      <div className="bg-noise" />
+    <div
+      className="relative min-h-screen w-full overflow-x-hidden text-[#1a1a1a]"
+      style={{ WebkitOverflowScrolling: 'touch' }}
+    >
+      {/* Noise Texture Overlay - hidden on mobile for performance */}
+      <div className="bg-noise hidden md:block" />
 
       {/* Navbar (Unified Pill) */}
       <Navbar currentLang={lang} setLang={setLang} />
@@ -126,7 +129,7 @@ const App: React.FC = () => {
 
         {/* Location & Season - Mobile */}
         <div className="px-6 py-6">
-          <div className="flex flex-col gap-5 text-xs font-bold tracking-widest uppercase bg-[#F8F4E8]/60 backdrop-blur-[2px] p-5 rounded-sm border border-black/5">
+          <div className="flex flex-col gap-5 text-xs font-bold tracking-widest uppercase bg-[#F8F4E8]/80 p-5 rounded-sm border border-black/5">
             <div className="flex flex-col relative" ref={mapRef}>
               <span className="opacity-40 mb-1">{content.locationLabel}</span>
               <button
@@ -181,15 +184,13 @@ const App: React.FC = () => {
 
         {/* Statement / Description - Mobile */}
         <div className="px-6 pb-6">
-          <div className="space-y-4 text-xs font-light leading-relaxed">
-            <div className="bg-[#F8F4E8]/15 backdrop-blur-[1px] p-5 rounded-sm space-y-4">
-              {seasonContent.description.map((paragraph, index) =>
-                renderParagraphWithPopovers(paragraph, index)
-              )}
-            </div>
+          <div className="bg-[#F8F4E8]/70 p-5 rounded-sm space-y-4 text-xs font-light leading-relaxed">
+            {seasonContent.description.map((paragraph, index) =>
+              renderParagraphWithPopovers(paragraph, index)
+            )}
 
             {seasonContent.bottomColumns && (
-              <div className="flex flex-col gap-4 pt-2 text-black/80 pl-5">
+              <div className="flex flex-col gap-4 pt-2 text-black/80 border-t border-black/10 mt-4">
                 {seasonContent.bottomColumns.map((col, index) => (
                   <p key={index} className={index > 0 ? "font-bold text-black" : ""}>
                     {col}

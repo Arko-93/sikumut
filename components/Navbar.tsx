@@ -41,12 +41,12 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, setLang }) => {
         {/* Brand Logo */}
         <a
           href="#home"
-          className="hover:opacity-70 transition-opacity"
+          className="hover:opacity-70 transition-opacity flex-shrink-0"
         >
           <img
             src="/sikumut-logo-navbar-horizontal-tagline.png"
             alt="Sikumut"
-            className="h-11 w-auto"
+            className="h-8 md:h-11 w-auto max-w-[140px] md:max-w-none object-contain"
           />
         </a>
 

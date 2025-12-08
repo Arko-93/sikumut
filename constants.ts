@@ -43,7 +43,7 @@ export const CONTENT: ContentMap = {
       description: [
         "La banquise ne négocie pas. Silarsuaq kisimi naalangaavoq.",
         "Nous voyageons avec des chasseurs groenlandais traditionnels, suivant leurs instincts et leurs meutes à travers Qimusseriarsuaq dans le Grand Nord.",
-        "Tentes chaudes. Ciel vierge. Givre sur les fronts. Chiens en boule dehors, aux aguets."
+        "Tentes de chasseurs chaudes. Pas de couloirs aériens. Givre sur les fronts. Chiens en boule dehors, aux aguets."
       ],
       bottomColumns: [
         "Seulement le silence brut de l'Arctique, le rythme de la meute et le vent sur la glace.",

@@ -19,4 +19,28 @@ body {
   color: #1a1a1a;
   font-family: 'Commit Mono', monospace;
   -webkit-font-smoothing: antialiased;
+  /* Mobile scroll performance */
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: none;
+  touch-action: manipulation;
+}
+
+html {
+  /* Prevent rubber-banding on iOS which can cause jank */
+  overscroll-behavior: none;
+}
+
+/* GPU acceleration for fixed elements on mobile */
+@media (max-width: 768px) {
+  .fixed {
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  /* Scale up and shift the image UP to show lower-mid region in hero area */
+  .spring-bg-position {
+    transform: scale(1.5) translateY(-15%) translateZ(0) !important;
+    object-position: center center !important;
+  }
 }
