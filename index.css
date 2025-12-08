@@ -30,8 +30,8 @@ html {
   overscroll-behavior: none;
 }
 
-/* GPU acceleration for fixed elements on mobile */
-@media (max-width: 768px) {
+/* GPU acceleration for fixed elements on mobile portrait only */
+@media (max-width: 768px) and (orientation: portrait) {
   .fixed {
     transform: translateZ(0);
     -webkit-backface-visibility: hidden;

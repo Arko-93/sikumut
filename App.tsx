@@ -122,8 +122,8 @@ const App: React.FC = () => {
       {/* Background Visuals */}
       <HeroImage season={season} />
 
-      {/* MOBILE LAYOUT (< md) */}
-      <main className="relative z-10 w-full min-h-screen flex flex-col md:hidden">
+      {/* MOBILE LAYOUT (portrait phones only) */}
+      <main className="relative z-10 w-full min-h-screen flex flex-col md:hidden landscape:hidden">
         {/* Spacer for navbar */}
         <div className="h-24"></div>
 
@@ -228,8 +228,8 @@ const App: React.FC = () => {
         <div className="h-8"></div>
       </main>
 
-      {/* DESKTOP LAYOUT (md+) */}
-      <main className="relative z-10 w-full h-screen pointer-events-none hidden md:block">
+      {/* DESKTOP LAYOUT (md+ or landscape) */}
+      <main className="relative z-10 w-full h-screen pointer-events-none hidden md:block landscape:block">
 
         {/* Location & Season - Top Right */}
         <div className="absolute top-32 right-12 flex flex-col gap-6 text-sm font-bold tracking-widest uppercase text-right pointer-events-auto bg-[#F8F4E8]/60 backdrop-blur-[2px] p-6 rounded-sm border border-black/5">
