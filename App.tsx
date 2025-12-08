@@ -232,7 +232,7 @@ const App: React.FC = () => {
       <main className="relative z-10 w-full h-screen pointer-events-none hidden md:block landscape:block">
 
         {/* Location & Season - Top Right */}
-        <div className="absolute top-32 right-12 flex flex-col gap-6 text-sm font-bold tracking-widest uppercase text-right pointer-events-auto bg-[#F8F4E8]/60 backdrop-blur-[2px] p-6 rounded-sm border border-black/5">
+        <div className="desktop-location-box absolute top-32 right-12 flex flex-col gap-6 text-sm font-bold tracking-widest uppercase text-right pointer-events-auto bg-[#F8F4E8]/60 backdrop-blur-[2px] p-6 rounded-sm border border-black/5">
           <div className="flex flex-col items-end relative" ref={mapRef}>
             <span className="opacity-40 mb-1">{content.locationLabel}</span>
             <button
@@ -284,7 +284,7 @@ const App: React.FC = () => {
         </div>
 
         {/* Statement / Description - Bottom Left */}
-        <div className="absolute bottom-8 left-12 max-w-5xl pointer-events-auto">
+        <div className="desktop-statement absolute bottom-8 left-12 max-w-5xl pointer-events-auto">
           <div className="space-y-4 text-sm font-light leading-relaxed">
             <div className="bg-[#F8F4E8]/15 backdrop-blur-[1px] p-5 rounded-sm space-y-4 max-w-md">
               {seasonContent.description.map((paragraph, index) =>
@@ -305,7 +305,7 @@ const App: React.FC = () => {
         </div>
 
         {/* Inquiries - Bottom Right */}
-        <div className="absolute bottom-8 right-12 text-sm font-bold tracking-widest uppercase text-right pointer-events-auto">
+        <div className="desktop-inquiries absolute bottom-8 right-12 text-sm font-bold tracking-widest uppercase text-right pointer-events-auto">
           <div className="flex flex-col items-end">
             <span className="opacity-40 mb-1">{content.inquiriesLabel}</span>
             <div className="flex items-center gap-3">

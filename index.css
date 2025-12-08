@@ -44,3 +44,60 @@ html {
     object-position: center center !important;
   }
 }
+
+/* Mobile landscape adjustments (short viewport height) */
+@media (orientation: landscape) and (max-height: 500px) {
+
+  /* Location/Season box - vertically centered */
+  .desktop-location-box {
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    right: 0.75rem !important;
+    padding: 0.75rem !important;
+    gap: 0.75rem !important;
+    font-size: 0.65rem !important;
+  }
+
+  /* Statement - smaller and positioned for short screens */
+  .desktop-statement {
+    bottom: 0.5rem !important;
+    left: 0.75rem !important;
+    max-width: 55% !important;
+  }
+
+  .desktop-statement .text-sm {
+    font-size: 0.65rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .desktop-statement .grid {
+    gap: 1rem !important;
+    font-size: 0.6rem !important;
+  }
+
+  /* Inquiries - bottom right with more spacing */
+  .desktop-inquiries {
+    bottom: 0.5rem !important;
+    right: 0.75rem !important;
+    font-size: 0.65rem !important;
+  }
+
+  /* Navbar adjustments */
+  header.fixed {
+    top: 0.5rem !important;
+  }
+}
+
+/* iPad portrait adjustments (taller viewport, medium width) */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+
+  /* Inquiries - move further down to avoid overlapping statement */
+  .desktop-inquiries {
+    bottom: 2rem !important;
+  }
+
+  /* Statement - ensure enough spacing */
+  .desktop-statement {
+    bottom: 4rem !important;
+  }
+}
