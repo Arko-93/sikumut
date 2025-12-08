@@ -30,6 +30,14 @@ html {
   overscroll-behavior: none;
 }
 
+/* Desktop focal correction for spring (FEB — MAY) hero */
+@media (min-width: 1024px) {
+  .spring-bg-position {
+    transform: scale(1.12) translateY(-6%) translateZ(0) !important;
+    object-position: center 20% !important;
+  }
+}
+
 /* GPU acceleration for fixed elements on mobile portrait only */
 @media (max-width: 768px) and (orientation: portrait) {
   .fixed {
